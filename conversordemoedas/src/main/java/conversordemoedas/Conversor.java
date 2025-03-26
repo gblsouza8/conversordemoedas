@@ -69,7 +69,7 @@ public class Conversor {
         // armazena na variavel qtd
         qtd = input.nextDouble();
 
-        // fecha o inpu
+        // fecha o input
         input.close();
 
         // exibe o resultado e faz os calculos
