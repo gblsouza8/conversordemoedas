@@ -49,13 +49,18 @@ public class Conversor {
                 break;
 
             default:
-                System.out.println("Moeda inválida...");
-                break;
+                input.close();
+                throw new IllegalArgumentException("Insira uma moeda válida...");
         }
 
         System.out.println("Insira a quantidade: ");
         qtd = input.nextDouble();
-        System.out.println(qtd + " " + moeda + " convertido para:\nReal: " + (qtd * real) + "R$" + "\nDollar: " + (qtd * dollar));
+        input.close();
+        System.out.printf("%.2f %s %s%n", qtd, moeda, "convertido para: ");
+        System.out.printf("%s %.2f%s%n", "- Reais:", (qtd * real), " reais");
+        System.out.printf("%s %.2f%s%n", "- Dollars:", (qtd * dollar), " dollars");
+        System.out.printf("%s %.2f%s%n", "- Euros:", (qtd * euro), " euros");
+        System.out.printf("%s %.2f%s%n", "- Libras:", (qtd * libra), " libras");
 
 
 
